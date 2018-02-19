@@ -1,5 +1,6 @@
 (defpackage nbody
-  (:use :cl))
+  (:use :cl)
+  (:export :start :my-quit))
 (in-package :nbody)
 
 (require :sdl2)
@@ -221,7 +222,14 @@
 	   
 	   ;; Run main loop
 	   (main-loop win #'render)))))))
-   
+
+(defun my-quit ()
+  (sdl2:push-event :quit)
+  #+sbcl (sb-ext:quit)
+  #+clisp (ext:exit)
+  #+ccl (ccl:quit)
+  #+allegro (excl:exit)
+  #+ecl (ext:quit))
 
 (defun start(n)
   (start-display)
