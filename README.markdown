@@ -1,6 +1,6 @@
 # Nbody
 
-I used the Debian Shootout nbody problem wrote in Common Lisp and SDL2+opengl
+I used the Debian Shootout nbody in Common Lisp and SDL2+opengl
 
 ## Usage
 
