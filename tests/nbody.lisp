@@ -6,8 +6,12 @@
 
 ;; NOTE: To run this test file, execute `(asdf:test-system :nbody)' in your Lisp.
 
-(plan nil)
+(setf *enable-colors* nil)
 
-;; blah blah blah.
+(plan 1)
+
+(subtest "start"
+  (is (start 1000) nil)
+  (sdl2:push-event :quit))
 
 (finalize)
